@@ -14,6 +14,9 @@ Array.from(navLinks).forEach(function (links){
     links.addEventListener('mouseout', function(event) {
         event.target.style.color = '';
     })  
+    links.addEventListener('click', function(event){
+        event.preventDefault()
+    })
 })   
 
 busImg.addEventListener('dblclick', function(event){
@@ -40,7 +43,6 @@ Array.from(header2).forEach(function (h2){
 Array.from(header4).forEach(function (tag){
     tag.addEventListener('select', function(event){
         event.currentTarget.style.backgroundColor ='black'
-        event.currentTarget.style.color = 'gray'
     })
 })
 
@@ -55,14 +57,15 @@ Array.from(dest).forEach(function (div){
 
 document.addEventListener('wheel', function(event){
     if(event){
-        document.body.style.backgroundColor = 'purple'
-    } else if(!event){
         document.body.style.backgroundColor = 'white'
-    }
-
+    } 
 })
 
 window.addEventListener('resize', function(event){
     navBar.style.backgroundColor = 'lightgreen'
+})
+
+window.addEventListener('load', function(event){
+    document.body.style.backgroundColor = 'lightpink'
 })
 
