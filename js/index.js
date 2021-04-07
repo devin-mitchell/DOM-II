@@ -53,6 +53,10 @@ Array.from(dest).forEach(function (div){
     div.addEventListener('mouseleave', function(event){
         event.target.style.backgroundColor = ''
     })
+    div.addEventListener('click', (e) => {
+        console.log('this is a div')
+        e.stopPropagation()
+    })
 })
 
 document.addEventListener('wheel', function(event){
@@ -69,3 +73,14 @@ window.addEventListener('load', function(event){
     document.body.style.backgroundColor = 'lightpink'
 })
 
+
+const signButton = document.querySelectorAll('.destination .btn')
+Array.from(signButton).forEach((but) => {
+    but.addEventListener('click', (e) => {
+        console.log('This is a button')
+    })
+})
+
+window.addEventListener('click', (e) => {
+    console.log('this is the window')
+})
