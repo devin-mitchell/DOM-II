@@ -1,9 +1,11 @@
+const navBar = document.querySelector('.main-navigation .nav-container')
 const navLinks = document.querySelectorAll('.nav a')
 const busImg = document.querySelector('.intro img')
 const header2 = document.querySelectorAll('.container h2')
 const pickDestDiv = document.querySelector('.content-destination')
 const dest = document.querySelectorAll('.destination')
-
+const contentDestImg = document.querySelector('.content-destinantion img')
+const header4 = document.querySelectorAll('.destination h4')
 
 Array.from(navLinks).forEach(function (links){
     links.addEventListener('mouseover', function (event){
@@ -32,25 +34,35 @@ Array.from(header2).forEach(function (h2){
     })
 })
 
-pickDestDiv.addEventListener('click', function(event){
-    event.currentTarget.style.backgroundColor ='black'
-    event.currentTarget.style.color = 'gray'
-})
 
-pickDestDiv.addEventListener('dblclick', function(event){
-    event.currentTarget.style.backgroundColor = 'white'
-    event.currentTarget.style.color = 'black'
-})
 
+
+Array.from(header4).forEach(function (tag){
+    tag.addEventListener('select', function(event){
+        event.currentTarget.style.backgroundColor ='black'
+        event.currentTarget.style.color = 'gray'
+    })
+})
 
 Array.from(dest).forEach(function (div){
-    div.addEventListener('mouseover', function(event){
+    div.addEventListener('mouseenter', function(event){
         event.target.style.backgroundColor = 'lightblue'
     })
-    div.addEventListener('mouseout', function(event){
+    div.addEventListener('mouseleave', function(event){
         event.target.style.backgroundColor = ''
     })
 })
 
+document.addEventListener('wheel', function(event){
+    if(event){
+        document.body.style.backgroundColor = 'purple'
+    } else if(!event){
+        document.body.style.backgroundColor = 'white'
+    }
 
+})
+
+window.addEventListener('resize', function(event){
+    navBar.style.backgroundColor = 'lightgreen'
+})
 
