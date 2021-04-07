@@ -38,12 +38,20 @@ Array.from(header2).forEach(function (h2){
 })
 
 
+document.addEventListener('keydown', (e) =>{
+    if(e.key === 'Escape'){
+        header4.forEach((tag) => {
+            tag.style.backgroundColor = 'black'
+        })
+    }
+})
 
-
-Array.from(header4).forEach(function (tag){
-    tag.addEventListener('select', function(event){
-        event.currentTarget.style.backgroundColor ='black'
-    })
+document.addEventListener('keyup', (e) => {
+    if(e.key === 'Escape'){
+        header4.forEach((tag) =>{
+            tag.style.backgroundColor = ''
+        })
+    }
 })
 
 Array.from(dest).forEach(function (div){
